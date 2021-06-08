@@ -33,7 +33,7 @@ class Quiz {
     Question.hide()
 
     //write code to change the background color here
-    
+    bcackground ("yellow")
 
     //write code to show a heading for showing the result of Quiz
     
