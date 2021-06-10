@@ -29,38 +29,32 @@ class Quiz {
   }
 
   play(){
-    //write code here to hide question elements
-    Question.hide()
+    question.hide();
+    background("Yellow");
+    fill(0);
+    textSize(30);
+    text("Result of the Quiz",340, 50);
+    text("----------------------------",320, 65);
+    Contestant.getPlayerInfo();
+    if(allContestants !== undefined){
+      debugger;
+      var display_Answers = 230;
+      fill("Blue");
+      textSize(20);
+      text("*NOTE: Contestant who answered correct are highlighted in green color!",130,230);
 
-    //write code to change the background color here
-    bcackground ("yellow")
+      for(var plr in allContestants){
+        debugger;
+        var correctAns = "2";
+        if (correctAns === allContestants[plr].answer)
+          fill("Green")
+        else
+          fill("red");
 
-    //write code to show a heading for showing the result of Quiz
-    
-
-    //call getContestantInfo( ) here
-    getContestantInfo( ) 
-
-
-    //write condition to check if contestantInfor is not undefined
-    if(allPlayers !== undefined){
-
-    //write code to add a note here
-      fill("blue")
-      textSize(20)
-      text ("*NOTE: Contastant who answered correct are highlighted in green color!",130,230)
+        display_Answers+=30;
+        textSize(20);
+        text(allContestants[plr].name + ": " + allContestants[plr].answer, 250,display_Answers)
+      }
     }
-
-    //write code to highlight contest who answered correctly
-    for(var plr in allContestant){
-      var CorrectAns = "2"
-      if ("CorrectAns" === allContestant[plr].answer)
-        fill("green")
-    else{
-        fill("red");
-
-  }
-
-}
   }
 }
